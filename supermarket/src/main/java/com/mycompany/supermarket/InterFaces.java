@@ -3,8 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.supermarket;
+
+import Gui.AdminGui;
 import Gui.LoginGui;
 import Gui.Register;
+import Gui.ReportOfPurchase;
+import Gui.ShowSupplierGui;
+import Gui.SupplierGui;
+import Gui.UserInterface;
+import Gui.product;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 
@@ -13,13 +20,15 @@ import javax.swing.JTable;
  * @author moham
  */
 public class InterFaces {
-    public static void SwitchTORegisterInterface (JFrame CurrentFrame){  
-    Register pointer_to_RegisterInterface = new Register();
-    SwichProcess Switch = new SwichProcess(pointer_to_RegisterInterface,CurrentFrame);
+   
+    public static void SwitchTOUserInterface (JFrame CurrentFrame,javax.swing.JTextField username){  
+    UserInterface pointer_to_Userinterface = new UserInterface(username.getText());
+    SwichProcess Switch = new SwichProcess(pointer_to_Userinterface,CurrentFrame);
     }
-    public static void SwitchTOLoginInterface (JFrame CurrentFrame){  
-    LoginGui pointer_to_LoginInterface = new LoginGui();
-    SwichProcess Switch = new SwichProcess(pointer_to_LoginInterface,CurrentFrame);
+    
+    public static void SwitchTOproductInterface (JFrame CurrentFrame){  
+    product pointer_to_productInterface = new product();
+    SwichProcess Switch = new SwichProcess(pointer_to_productInterface,CurrentFrame);
     }
-
+   
 }
