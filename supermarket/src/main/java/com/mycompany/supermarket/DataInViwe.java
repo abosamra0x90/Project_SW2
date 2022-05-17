@@ -28,9 +28,7 @@ import org.apache.commons.dbutils.DbUtils;
  * @author moham
  */
 public class DataInViwe {
-    public  int Product_Quantity;
-    public  float Product_Price;
-    public  String Product_Name,IProduct_ID,Product_Expiration,Product_Production,Product_Catcegories;
+ 
     public static void ShowTextMessage(String Message){
     JOptionPane.showMessageDialog(null , Message);
     }
