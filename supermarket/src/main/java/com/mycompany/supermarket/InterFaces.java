@@ -38,5 +38,13 @@ public class InterFaces {
     LoginGui pointer_to_LoginInterface = new LoginGui();
     SwichProcess Switch = new SwichProcess(pointer_to_LoginInterface,CurrentFrame);
     }
+    public static void SwitchTOPurchaseGuiInterface (JFrame CurrentFrame,String Username){  
+    PurchaseGui SwitchTOShowSupplierGuiInterface = new PurchaseGui(Username);
+    SwichProcess Switch = new SwichProcess(SwitchTOShowSupplierGuiInterface,CurrentFrame);
+    }
+    public static void SwitchTOReportOfPurchaseInterface (JFrame CurrentFrame,JTable jtable,String UserName ){  
+    ReportOfPurchase pointer_to_ReportOfPurchaseInterface = new ReportOfPurchase(jtable,UserName);
+    SwichProcess Switch = new SwichProcess(pointer_to_ReportOfPurchaseInterface,CurrentFrame);
+    }
    
 }
