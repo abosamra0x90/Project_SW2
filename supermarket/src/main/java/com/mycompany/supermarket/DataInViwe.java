@@ -32,6 +32,16 @@ public class DataInViwe {
     public static void ShowTextMessage(String Message){
     JOptionPane.showMessageDialog(null , Message);
     }
+ public void TransformArgument_ToList(Arguments ArgumentProduct,JTable jtable) throws SQLException{ 
+         
+           String tbData[]={
+               ArgumentForAll.IProduct_ID,
+               ArgumentForAll.Product_Name,
+               Integer.toString(ArgumentForAll.Quantity),
+               Float.toString(ArgumentForAll.Product_Price),
+               Float.toString(ArgumentForAll.TotalPrice)};
+           DataInJTable.PutFrom_DataTo_Jtable(jtable, tbData);
+         }
 
 }
 
