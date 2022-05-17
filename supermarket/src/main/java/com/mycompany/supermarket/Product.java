@@ -166,4 +166,14 @@ public class Product implements DatabaseOperations {
         }
             
     }
+     public ResultSet showProducts(JTable jframe){
+        ResultSet resultSet = GetDataFromDataBase.GetTableProduct();
+        try {
+            DataInViwe showTable =new DataInViwe();
+            showTable.ShowTableProducts(resultSet,jframe);
+        } catch (SQLException ex) {
+            Logger.getLogger(Product.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return resultSet;
+    }
 }
