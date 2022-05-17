@@ -30,5 +30,13 @@ public class InterFaces {
     product pointer_to_productInterface = new product();
     SwichProcess Switch = new SwichProcess(pointer_to_productInterface,CurrentFrame);
     }
+    public static void SwitchTORegisterInterface (JFrame CurrentFrame){  
+    Register pointer_to_RegisterInterface = new Register();
+    SwichProcess Switch = new SwichProcess(pointer_to_RegisterInterface,CurrentFrame);
+    }
+    public static void SwitchTOLoginInterface (JFrame CurrentFrame){  
+    LoginGui pointer_to_LoginInterface = new LoginGui();
+    SwichProcess Switch = new SwichProcess(pointer_to_LoginInterface,CurrentFrame);
+    }
    
 }
