@@ -46,5 +46,9 @@ public class InterFaces {
     ReportOfPurchase pointer_to_ReportOfPurchaseInterface = new ReportOfPurchase(jtable,UserName);
     SwichProcess Switch = new SwichProcess(pointer_to_ReportOfPurchaseInterface,CurrentFrame);
     }
+    public static void SwitchTOSupplierInterface (JFrame CurrentFrame){  
+    SupplierGui pointer_to_productInterface = new SupplierGui();
+    SwichProcess Switch = new SwichProcess(pointer_to_productInterface,CurrentFrame);
+    }
    
 }
