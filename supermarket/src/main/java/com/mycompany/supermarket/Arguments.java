@@ -12,6 +12,7 @@ public class Arguments {
     public int Product_Quantity,Quantity;
     public float Product_Price,No_Gain_Price,TotalPrice;
     public String Product_Name,IProduct_ID,Product_Expiration,Product_Production,Product_Catcegories;
+    public String Name_Supplier , Telphone_Supplier;
     public javax.swing.JPasswordField newpassword,password,renewpassword;
     public javax.swing.JTextField username,newusername;
     
