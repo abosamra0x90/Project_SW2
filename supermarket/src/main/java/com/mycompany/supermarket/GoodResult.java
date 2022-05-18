@@ -12,12 +12,12 @@ import javax.swing.JFrame;
  */
 public class GoodResult {
     public static void InsertDone(){
-        DataInViwe.ShowTextMessage("InsertDone");
+        ShowDataInGui.ShowTextMessage("InsertDone");
     }
     public static void IUpdateDone(){
-        DataInViwe.ShowTextMessage("IUpdateDone");
+        ShowDataInGui.ShowTextMessage("IUpdateDone");
     }
     public static void DeleteDone(){
-        DataInViwe.ShowTextMessage("DeleteDone");
+        ShowDataInGui.ShowTextMessage("DeleteDone");
     }
 }

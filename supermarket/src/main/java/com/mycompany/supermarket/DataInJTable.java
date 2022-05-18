@@ -24,5 +24,9 @@ public class DataInJTable {
         DefaultTableModel InModel=(DefaultTableModel)Injtable.getModel();
         Outjtable.setModel(InModel);
     }
-    
+    public static void SetDataInArguments(Arguments ProductArguments,DefaultTableModel ModelOfProducts,int CounterOfRow){     
+        ProductArguments.Product_Name = (String) ModelOfProducts.getValueAt(0, 1);
+        ProductArguments.Product_Price = Float.parseFloat((String) ModelOfProducts.getValueAt(0, 3));
+        ProductArguments.Quantity = Integer.parseInt((String) ModelOfProducts.getValueAt(0, 2));
+    }
 }

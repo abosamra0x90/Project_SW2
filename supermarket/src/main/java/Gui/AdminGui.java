@@ -6,6 +6,9 @@ package Gui;
 
 import com.mycompany.supermarket.InterFaces;
 import com.mycompany.supermarket.Product;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -31,12 +34,12 @@ public class AdminGui extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        operations_to_product = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Operations_Product = new javax.swing.JButton();
+        Operation_Supplier = new javax.swing.JButton();
         ShowProducts = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
+        AllProductsTable = new javax.swing.JTable();
+        LogOut = new javax.swing.JButton();
         Show_All_Supplier = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -54,17 +57,17 @@ public class AdminGui extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        operations_to_product.setText("Operations to Product");
-        operations_to_product.addActionListener(new java.awt.event.ActionListener() {
+        Operations_Product.setText("Operations to Product");
+        Operations_Product.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                operations_to_productActionPerformed(evt);
+                Operations_ProductActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Operations to Supplier");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Operation_Supplier.setText("Operations to Supplier");
+        Operation_Supplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Operation_SupplierActionPerformed(evt);
             }
         });
 
@@ -75,7 +78,7 @@ public class AdminGui extends javax.swing.JFrame {
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        AllProductsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -83,12 +86,12 @@ public class AdminGui extends javax.swing.JFrame {
                 "Name", "Id", "Quantity", "Price"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(AllProductsTable);
 
-        jButton3.setText("LogOut");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        LogOut.setText("LogOut");
+        LogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                LogOutActionPerformed(evt);
             }
         });
 
@@ -103,64 +106,61 @@ public class AdminGui extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Operation_Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                    .addComponent(Show_All_Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 393, Short.MAX_VALUE)
-                        .addComponent(operations_to_product)
-                        .addGap(143, 143, 143))))
-            .addComponent(jScrollPane2)
+                    .addComponent(ShowProducts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Operations_Product, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jButton3)
+                .addGap(296, 296, 296)
+                .addComponent(LogOut)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Show_All_Supplier)
-                .addGap(95, 95, 95)
-                .addComponent(ShowProducts)
-                .addGap(140, 140, 140))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(operations_to_product)
-                .addGap(34, 34, 34)
-                .addComponent(jButton2)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Operation_Supplier)
+                    .addComponent(Operations_Product))
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ShowProducts)
                     .addComponent(Show_All_Supplier))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(25, 25, 25)
+                .addComponent(LogOut)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void operations_to_productActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_operations_to_productActionPerformed
+    private void Operations_ProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Operations_ProductActionPerformed
         InterFaces.SwitchTOproductInterface(this);
-    }//GEN-LAST:event_operations_to_productActionPerformed
+    }//GEN-LAST:event_Operations_ProductActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Operation_SupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Operation_SupplierActionPerformed
         InterFaces.SwitchTOSupplierInterface(this);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Operation_SupplierActionPerformed
 
     private void ShowProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowProductsActionPerformed
-        Product ShowProduct_Table = new  Product();
-        ShowProduct_Table.showProducts(this.jTable2);
+        try {
+            Product ShowProduct_Table = new  Product();
+            ShowProduct_Table.showProducts(this.AllProductsTable);
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminGui.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_ShowProductsActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
         InterFaces.SwitchTOLoginInterface(this);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_LogOutActionPerformed
 
     private void Show_All_SupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_All_SupplierActionPerformed
         InterFaces.SwitchTOShowSupplierGuiInterface(this);
@@ -203,14 +203,14 @@ public class AdminGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable AllProductsTable;
+    private javax.swing.JButton LogOut;
+    private javax.swing.JButton Operation_Supplier;
+    private javax.swing.JButton Operations_Product;
     private javax.swing.JButton ShowProducts;
     private javax.swing.JButton Show_All_Supplier;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JButton operations_to_product;
     // End of variables declaration//GEN-END:variables
 }

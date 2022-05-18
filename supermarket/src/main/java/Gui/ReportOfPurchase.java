@@ -5,7 +5,9 @@
 package Gui;
 
 import com.mycompany.supermarket.DataInJTable;
+import com.mycompany.supermarket.InterFaces;
 import com.mycompany.supermarket.Product;
+import com.mycompany.supermarket.Purchases;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 
@@ -36,6 +38,7 @@ public class ReportOfPurchase extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         OrederTable = new javax.swing.JTable();
         Buy = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,6 +70,13 @@ public class ReportOfPurchase extends javax.swing.JFrame {
             }
         });
 
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,15 +84,19 @@ public class ReportOfPurchase extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(245, 245, 245)
                 .addComponent(Buy)
+                .addGap(62, 62, 62)
+                .addComponent(Back)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(Buy)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Buy)
+                    .addComponent(Back))
                 .addGap(0, 81, Short.MAX_VALUE))
         );
 
@@ -90,9 +104,14 @@ public class ReportOfPurchase extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuyActionPerformed
-        Product purchase_product = new Product();
+        Purchases purchase_product = new Purchases();
         purchase_product.BuyProducts(OrederTable, UserName);
     }//GEN-LAST:event_BuyActionPerformed
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+       InterFaces.SwitchTOPurchaseGuiInterface(this,UserName);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,6 +151,7 @@ public class ReportOfPurchase extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JButton Buy;
     private javax.swing.JTable OrederTable;
     private javax.swing.JScrollPane jScrollPane1;

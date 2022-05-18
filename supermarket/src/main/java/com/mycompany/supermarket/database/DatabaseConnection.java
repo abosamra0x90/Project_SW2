@@ -20,9 +20,9 @@ import javax.swing.JOptionPane;
 public class DatabaseConnection {
 
     private String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private String url="jdbc:sqlserver://DESKTOP-TPLTUD0\\MSSQLSERVER:1433;databaseName=tesg;encrypt=true; trustServerCertificate=true;";
+    private String url="jdbc:sqlserver://MOHAMED\\SQLEXPRESS:1433;databaseName=superMarket;encrypt=true; trustServerCertificate=true;";
     private String user="test";
-    private String pass="test";
+    private String pass="123";
     
     
     public DatabaseConnection() {

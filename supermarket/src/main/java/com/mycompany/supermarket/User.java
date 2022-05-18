@@ -73,8 +73,9 @@ public class User implements DatabaseOperations {
             PreparedStatement Prepared_Statement = DatabasePraparedQuery.Database_PreparedStatement(SQLQueries.SearchForUser());
             Prepared_Statement.setString (1,Name);
             Prepared_Statement.setString(2,password);
-            System.out.println(Prepared_Statement);
+            ;
             ResultSet result = Prepared_Statement.executeQuery();
+            
             return result;
               
         } catch (SQLException ex) {
@@ -99,12 +100,12 @@ public class User implements DatabaseOperations {
             }
             else
             {
-                DataInViwe.ShowTextMessage("username and password are not correct");
+                ShowDataInGui.ShowTextMessage("username and password are not correct");
             } 
         }
      catch( Exception  e )
         {
-            DataInViwe.ShowTextMessage(e.toString());   
+            ShowDataInGui.ShowTextMessage(e.toString());   
         }
    }
        public static void checkUser(javax.swing.JTextField username,JFrame Currentframe){
@@ -117,14 +118,14 @@ public class User implements DatabaseOperations {
     }
        public static void checkUserForUpdate(Arguments NewData){
            if (NewData.username.getText().equals("Admin")){
-              DataInViwe.ShowTextMessage("you cannot edite name to Admin");
+              ShowDataInGui.ShowTextMessage("you cannot edite name to Admin");
             }
            else {
                if (NewData.renewpassword.getText().equals(NewData.newpassword.getText())){
                  
                }
                else {
-               DataInViwe.ShowTextMessage("password andrepassword are not same");
+               ShowDataInGui.ShowTextMessage("password andrepassword are not same");
                }
             }
     }

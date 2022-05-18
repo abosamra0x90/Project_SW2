@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -30,5 +32,23 @@ public class Purchases {
             Logger.getLogger(Product.class.getName()).log(Level.SEVERE, null, ex);
         }
     
+    }
+      public void BuyProducts(JTable TableOfProducts,String UserName){
+        DefaultTableModel ModelOfProducts=(DefaultTableModel)TableOfProducts.getModel();
+        Arguments ProductArguments = new Arguments();
+        ModelOfProducts.getRowCount();
+        int CounterForRows = 1 ;
+        int CounterForCoulmns = ModelOfProducts.getRowCount() ;
+        while ( CounterForCoulmns>0){
+            DataInJTable.SetDataInArguments(ProductArguments, ModelOfProducts, CounterForRows);
+            Product Product_found = new Product(); 
+            Product_found.SerachProduct(ProductArguments);
+            Purchases.StorePurchases(ProductArguments, UserName);
+            ProductArguments.Product_Quantity  = ProductArguments.Product_Quantity - ProductArguments.Quantity;
+            Product_found.UpdateProduct(ProductArguments);
+            CounterForRows ++ ;
+            CounterForCoulmns --;
+        }
+            
     }
 }

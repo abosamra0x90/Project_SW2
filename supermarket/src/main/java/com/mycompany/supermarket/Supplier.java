@@ -69,9 +69,9 @@ public class Supplier implements DatabaseOperations {
     }
     public static void Show_All_Supplier(JTable jtable){
         ResultSet Resulte = GetDataFromDataBase.GetTableSupplier();
-        DataInViwe ShowSuppliers = new DataInViwe();
+        ShowDataInGui ShowSuppliers = new ShowDataInGui();
         try {
-            ShowSuppliers.ShowTableSupplier(Resulte, jtable);
+            ShowSuppliers.ShowSuppliers(Resulte, jtable);
         } catch (SQLException ex) {
             Logger.getLogger(Supplier.class.getName()).log(Level.SEVERE, null, ex);
         }

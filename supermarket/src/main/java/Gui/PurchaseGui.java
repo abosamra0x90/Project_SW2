@@ -13,7 +13,7 @@ package Gui;
 import com.mycompany.supermarket.Product;
 import com.mycompany.supermarket.Arguments;
 import com.mycompany.supermarket.DataInJTable;
-import com.mycompany.supermarket.DataInViwe;
+import com.mycompany.supermarket.ShowDataInGui;
 import com.mycompany.supermarket.InterFaces;
 import java.awt.List;
 import java.sql.Connection;
@@ -277,13 +277,13 @@ public class PurchaseGui extends javax.swing.JFrame {
 
     private void addorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addorderActionPerformed
 
-        Product PurchaseProduct = new Product();
+        ShowDataInGui PurchaseProduct = new ShowDataInGui();
         Arguments PruductArguments = new Arguments();
         PruductArguments.Product_Name = product.getText();
         int Quantity =Integer.parseInt(quantity.getText() );
         PruductArguments.Quantity = Quantity;
         try {
-            PurchaseProduct.AddOrder_Product(PruductArguments,ordertable);
+            PurchaseProduct.ShoworderProduct(PruductArguments,ordertable);
         } catch (SQLException ex) {
             Logger.getLogger(PurchaseGui.class.getName()).log(Level.SEVERE, null, ex);
         }
