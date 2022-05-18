@@ -4,6 +4,7 @@
  */
 package Gui;
 
+import com.mycompany.supermarket.InterFaces;
 import com.mycompany.supermarket.Supplier;
 import javax.swing.JTable;
 
@@ -45,6 +46,11 @@ public class ShowSupplierGui extends javax.swing.JFrame {
         jScrollPane1.setViewportView(SuppliersTable);
 
         Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
 
         Print.setText("Print");
 
@@ -76,6 +82,10 @@ public class ShowSupplierGui extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        InterFaces.SwitchTOAdminInterFace(this);
+    }//GEN-LAST:event_BackActionPerformed
 
     /**
      * @param args the command line arguments

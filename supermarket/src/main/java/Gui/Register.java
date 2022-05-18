@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Gui;
+import com.mycompany.supermarket.ShowDataInGui;
 import com.mycompany.supermarket.InterFaces;
-import com.mycompany.supermarket.DataInViwe;
+
 import com.mycompany.supermarket.User;
 import javax.swing.JOptionPane;
 /**
@@ -120,7 +121,7 @@ public class Register extends javax.swing.JFrame {
             InterFaces.SwitchTOLoginInterface(this);
         }
         else {
-            DataInViwe.ShowTextMessage("passwords not equals");
+            ShowDataInGui.ShowTextMessage("passwords not equals");
         }
     }//GEN-LAST:event_registerActionPerformed
 

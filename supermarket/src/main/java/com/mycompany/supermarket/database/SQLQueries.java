@@ -12,18 +12,19 @@ package com.mycompany.supermarket.database;
  */
 public class SQLQueries {
     private static String SearchQuery = "Select * from Product where Product_Name=?";
-    private static String InsertQuery = "insert into Product"+"(Product_Name,IProduct_ID,Product_Expiration,Product_Production,Product_Quantity,Product_Price,Product_Catcegories,No_Gain_Price)"+ "values(?,?,?,?,?,?,?,?)";
-    private static String InsertUsers = "INSERT INTO [dbo].[test]([username],[password])VALUES(?,?)";
-    private static String UpdateQuery = "update Product set Product_Name=?,Product_Expiration=?,Product_Production=?,Product_Quantity=?,Product_Price=?,No_Gain_Price=? where IProduct_ID=?";
+    private static String InsertQuery = "insert into Product(Product_Name,Product_ID,Product_Expiration,Product_Production,Product_Quantity,Product_Price,Product_Catcegories,No_Gain_Price)"+ "values(?,?,?,?,?,?,?,?)";
+    private static String InsertUsers = "INSERT INTO [dbo].[User]([Username],[password])VALUES(?,?)";
+    private static String UpdateQuery = "update Product set Product_Name=?,Product_Expiration=?,Product_Production=?,Product_Quantity=?,Product_Price=?,No_Gain_Price=? where Product_ID=?";
     private static String UpdateusersQuery = "update test set username=?,password=? where username=? AND password=?";
-    private static String DeleteQuery = "Delete from Product where IProduct_ID=?";
+    private static String DeleteQuery = "Delete from Product where Product_ID=?";
     private static String CategoryQuery = "select * from Category";
-    private static String SearchForUserQuery = "Select * from test where username =? and password =?" ;
+    private static String SearchForUserQuery = "Select * from [dbo].[User] where Username =? and password =?" ;
     private static String AddSupplierQuery = "insert into Supplier (Sup_Tel , Sup_Name ) "  +  " values ( ? , ?)" ;
     private static String DeleteSupplierQuery = "Delete from Supplier where Sup_Name=?" ;
     private static String UpdateSupplierQuery = "update Supplier set Sup_Tel=? where Sup_Name =?" ;
     private static String ShowtableProductQuery = "Select * from Product";
     private static String InsertpurchaseQuery = "insert into BuIng(NameOfUser,Name ,Quantity,Margin,Price, Profit)VALUES(?,?,?,?,?,?)";
+    private static String ShowtableSupplierQuery = "Select * from Supplier";
     public static String getCategoryQuery() {
         return CategoryQuery;
     }
@@ -66,6 +67,8 @@ public class SQLQueries {
     public static String Insertpurchase() {
         return InsertpurchaseQuery;
     }
-    
+    public static String ShowtableSupplierQuery() {
+        return ShowtableSupplierQuery;
+    }
     
 }

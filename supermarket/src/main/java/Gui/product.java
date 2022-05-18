@@ -55,8 +55,7 @@ public class product extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        IProduct_ID = new javax.swing.JTextField();
+        Product_ID = new javax.swing.JTextField();
         Product_Expiration = new javax.swing.JTextField();
         Product_Production = new javax.swing.JTextField();
         Product_Quantity = new javax.swing.JTextField();
@@ -68,7 +67,6 @@ public class product extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         Price = new javax.swing.JLabel();
         Product_Price = new javax.swing.JTextField();
-        Product_Catcegories = new javax.swing.JComboBox<>();
         UpdateButton = new javax.swing.JButton();
         InsertProduct = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
@@ -94,11 +92,7 @@ public class product extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
         jLabel4.setText(" Expiration");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel5.setText(" Categories ");
-
-        IProduct_ID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Product_ID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         Product_Expiration.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -139,13 +133,6 @@ public class product extends javax.swing.JFrame {
         Price.setText("Price");
 
         Product_Price.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        Product_Catcegories.setSelectedItem(Product_Catcegories);
-        Product_Catcegories.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Product_CatcegoriesActionPerformed(evt);
-            }
-        });
 
         UpdateButton.setText("Update");
         UpdateButton.addActionListener(new java.awt.event.ActionListener() {
@@ -197,48 +184,47 @@ public class product extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel2)
-                                .addComponent(Price))
-                            .addComponent(jLabel6))))
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel2)
+                            .addComponent(Price)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
+                        .addGap(28, 28, 28)
+                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SearchButton)
+                        .addGap(51, 51, 51))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Product_Production, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Product_Expiration, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Product_Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Product_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Product_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Product_Catcegories, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IProduct_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(No_Gain_Price))
+                            .addComponent(Product_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No_Gain_Price, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE))
                         .addGap(103, 103, 103))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(InsertProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71)
+                        .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64)
+                        .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SearchButton)
-                        .addGap(51, 51, 51))))
+                        .addComponent(jButton1)
+                        .addContainerGap())))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(169, 169, 169)
-                .addComponent(InsertProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110)
-                .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
@@ -257,7 +243,7 @@ public class product extends javax.swing.JFrame {
                 .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(IProduct_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Product_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Product_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -278,15 +264,11 @@ public class product extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Price)
                     .addComponent(Product_Price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(Product_Catcegories, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(No_Gain_Price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                    .addComponent(No_Gain_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(InsertProduct)
                     .addComponent(UpdateButton)
@@ -320,8 +302,8 @@ public class product extends javax.swing.JFrame {
         PruductArguments.Product_Name =search.getText() ;
         Product SearchProduct = new Product();
         SearchProduct.SerachProduct (PruductArguments);
-        String SetId =  PruductArguments.IProduct_ID ;
-        IProduct_ID.setText(SetId);
+        String SetId =  PruductArguments.Product_ID ;
+        Product_ID.setText(SetId);
         String SetName = PruductArguments.Product_Name;
         Product_Name.setText(SetName);
         String SetExpiration = PruductArguments.Product_Expiration;
@@ -338,45 +320,38 @@ public class product extends javax.swing.JFrame {
 
     private void InsertProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertProductActionPerformed
     Arguments PruductArguments = new Arguments();
-    PruductArguments.Product_Name =Product_Name.getText() ; 
-    PruductArguments.IProduct_ID= IProduct_ID.getText() ; 
-    PruductArguments.Product_Expiration=Product_Expiration.getText() ; 
-    PruductArguments.Product_Production= Product_Production.getText()  ; 
-    PruductArguments.Product_Quantity=Integer.parseInt(Product_Quantity.getText()) ; 
-    PruductArguments.Product_Price=Float.parseFloat(Product_Price.getText())  ; 
-    PruductArguments.No_Gain_Price=Float.parseFloat(No_Gain_Price.getText())  ;
-    PruductArguments.Product_Catcegories=Product_Catcegories.getItemAt(Product_Catcegories.getSelectedIndex());
     Product AddProduct = new Product();
+    PruductArguments.Product_Name = Product_Name.getText() ; 
+    PruductArguments.Product_ID = Product_ID.getText() ; 
+    PruductArguments.Product_Expiration = Product_Expiration.getText() ; 
+    PruductArguments.Product_Production = Product_Production.getText()  ; 
+    PruductArguments.Product_Quantity = Integer.parseInt(Product_Quantity.getText()); 
+    PruductArguments.Product_Price = Float.parseFloat(Product_Price.getText()); 
+    PruductArguments.No_Gain_Price = Float.parseFloat(No_Gain_Price.getText());
     AddProduct.InsertProduct (PruductArguments);
     }//GEN-LAST:event_InsertProductActionPerformed
 
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
-         
+    Product UpdateProduct = new Product();     
     Arguments PruductArguments = new Arguments();
     PruductArguments.Product_Name =Product_Name.getText() ; 
-    PruductArguments.IProduct_ID= IProduct_ID.getText() ; 
+    PruductArguments.Product_ID= Product_ID.getText() ; 
     PruductArguments.Product_Expiration=Product_Expiration.getText() ; 
     PruductArguments.Product_Production= Product_Production.getText()  ; 
     PruductArguments.Product_Quantity=Integer.parseInt(Product_Quantity.getText()) ; 
     PruductArguments.Product_Price=Float.parseFloat(Product_Price.getText())  ; 
     PruductArguments.No_Gain_Price=Float.parseFloat(No_Gain_Price.getText())  ;
-    PruductArguments.Product_Catcegories=Product_Catcegories.getItemAt(Product_Catcegories.getSelectedIndex());
-    Product UpdateProduct = new Product();
     UpdateProduct.UpdateProduct (PruductArguments);
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         Product DeleteProduct = new Product();
-    DeleteProduct.DeleteProduct (IProduct_ID.getText());
+    DeleteProduct.DeleteProduct (Product_ID.getText());
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void Product_QuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Product_QuantityActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Product_QuantityActionPerformed
-
-    private void Product_CatcegoriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Product_CatcegoriesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Product_CatcegoriesActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         InterFaces.SwitchTOAdminInterFace(this);
@@ -424,12 +399,11 @@ public class product extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteButton;
-    private javax.swing.JTextField IProduct_ID;
     private javax.swing.JButton InsertProduct;
     private javax.swing.JTextField No_Gain_Price;
     private javax.swing.JLabel Price;
-    private javax.swing.JComboBox<String> Product_Catcegories;
     private javax.swing.JTextField Product_Expiration;
+    private javax.swing.JTextField Product_ID;
     private javax.swing.JTextField Product_Name;
     private javax.swing.JTextField Product_Price;
     private javax.swing.JTextField Product_Production;
@@ -441,7 +415,6 @@ public class product extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
